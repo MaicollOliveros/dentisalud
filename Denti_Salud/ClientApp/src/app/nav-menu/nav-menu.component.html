@@ -1,0 +1,103 @@
+<header>
+  <nav
+    class="navbar navbar-expand-lg navbar-toggleable-sm navbar-light"
+    style="background-color: #336dab;"
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/']" id="logo">
+        <img src="https://i.ibb.co/gP00HnN/crown.png" style="width: 40px; margin-right: 10px;"/>
+        Denti Salud
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+        [ngClass]="{ show: isExpanded }"
+      >
+      <ul class="navbar-nav flex-grow">
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-light" [routerLink]="['/']">Home</a>
+          </li>
+            <li class ="nav-item"  [routerLinkActive]="['link-active']" *ngIf="!currentUser">
+              <a class="nav-link text-light" [routerLink]="['/login']">Login</a>
+              </li>
+
+
+              <!-- ADMINISTRADOR -->
+              <li *ngIf="rol=='adm'" class="nav-item dropdown">
+              <li *ngIf="currentUser" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Recepcionista
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" [routerLink]="['/registrar-recepcionista']">Registrar</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/consultar-recepcionista']">Consultar</a></li>
+                </ul>
+              </li>
+              <li *ngIf="currentUser" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Odontologo
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" [routerLink]="['/registrar-odontologo']">Registrar</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/consultar-odontologo']">Consultar</a></li>
+                </ul>
+              </li>
+              
+
+              <!-- ODONTOLOGO -->
+              <!-- <li *ngIf="currentUser && rol=='odn'" class="nav-item dropdown"> -->
+              <li *ngIf="currentUser" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Tratamientos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" [routerLink]="['/registrar-tratamiento']">Registrar</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/consultar-tratamiento']">Consultar</a></li>
+                </ul>
+              </li>
+              <!-- <li *ngIf="currentUser" class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Usuarios
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item" [routerLink]="['/registrar-usuario']">Registrar</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/consultar-usuario']">Consultar</a></li>
+    </ul>
+  </li> -->
+              <!-- RECEPCIONISTA -->
+              <li *ngIf="currentUser" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Paciente
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" [routerLink]="['/registrar-paciente']">Registrar</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/consultar-paciente']">Consultar</a></li>
+                </ul>
+              </li>
+              <!-- PACIENTE -->
+              <li *ngIf="currentUser" class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="nav-link text-light"
+                   [routerLink]="['agenda']">
+                  Agenda
+                </a>
+              </li>
+              <li *ngIf="currentUser" class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="nav-link text-light" (click)="logout()">Salir</a>
+              </li>
+</ul>
+      </div>
+    </div>
+  </nav>
+  <br />
+</header>

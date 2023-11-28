@@ -1,0 +1,62 @@
+<form class="form-group">
+  <div class="card p-3 mb-2">
+    <h2 class="card'title">Datos basicos del consultorio</h2>
+    <div class="row">
+      <div class="col-12 col-lg-5 mb-3">
+        <label for="nombreEmpresa" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombreEmpresa" />
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="direccionEmpresa" class="form-label">Direccion</label>
+        <input type="text" class="form-control" id="direccionEmpresa" />
+      </div>
+      <div class="col-12 col-lg-3 mb-3">
+        <label for="celularEmpresa" class="form-label">Telefono/Celular</label>
+        <input type="text" class="form-control" id="celularEmpresa" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <label for="correoEmpresa" class="form-label">Correo electronico</label>
+        <input type="email" class="form-control" id="correoEmpresa" />
+      </div>
+      <div class="col-12 col-lg-6">
+        <label for="slcRips">Generacion de RIPS</label>
+        <select class="form-control" id="slcRips" name="slcRips">
+          <option selected disabled>--Seleccione--</option>
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="card p-3 mb-2">
+    <h2 class="card'title">Datos para la facturacion</h2>
+    <div class="row">
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="razonSocial" class="form-label">Razon social</label>
+        <input type="text" class="form-control" id="razonSocial" />
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="nit" class="form-label">Nit</label>
+        <input type="text" class="form-control" id="nit" />
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="resolFactura" class="form-label"
+          >Resolucion de factura</label
+        >
+        <input type="text" class="form-control" id="resolFactura" />
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-5 mb-3">
+    <label for="formFile" class="form-label"
+      >Adjunte el logotipo del consultorio</label
+    >
+    <input class="form-control" type="file" id="formFile" />
+  </div>
+  <div class="d-flex justify-content-end">
+    <button href="#" class="btn btn-primary mr-3">Guardar</button>
+    <button href="#" class="btn btn-danger">Cancelar</button>
+  </div>
+</form>

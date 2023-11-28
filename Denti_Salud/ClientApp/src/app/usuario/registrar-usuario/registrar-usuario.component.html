@@ -1,0 +1,65 @@
+<form class="form-group" [formGroup]="formGroup">
+  <div class="card p-3 mb-2">
+    <h2 class="card-title">Registrar usuario</h2>
+    <div class="row">
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" name="name" formControlName="name"
+        [ngClass]="{ 'is-invalid':  control.name.errors && formGroup.get('name').touched}"
+        />
+        <div *ngIf="control.name.errors" class="invalid-feedback">
+          <div *ngIf="control.name.errors.required">Se requiere el nombre</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="userName" class="form-label">Nombre de usuario</label>
+        <input type="text" class="form-control" id="userName" name="userName" formControlName="userName"
+          [ngClass]="{ 'is-invalid':  control.userName.errors && formGroup.get('userName').touched}"
+        />
+        <div *ngIf="control.userName.errors" class="invalid-feedback">
+          <div *ngIf="control.userName.errors.required">Se requiere el userName</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password" name="password" formControlName="password"
+          [ngClass]="{ 'is-invalid':  control.password.errors && formGroup.get('password').touched}"
+        />
+        <div *ngIf="control.password.errors" class="invalid-feedback">
+          <div *ngIf="control.password.errors.required">Se requiere la password</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <label for="role">Rol</label>
+        <select class="form-control" id="role" name="role" formControlName="role"
+          [ngClass]="{ 'is-invalid':  control.role.errors && formGroup.get('role').touched}"
+        >
+          <option selected disabled>--Seleccione--</option>
+          <option value="odn">Odontologo</option>
+          <option value="pcn">Paciente</option>
+          <option value="rcp">Recepcionista</option>
+          <option value="adm">Administrador</option>
+        </select>
+        <div *ngIf="control.role.errors" class="invalid-feedback">
+          <div *ngIf="control.role.errors.required">Se requiere el role</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="email" class="form-label">Correo</label>
+        <input type="text" class="form-control" id="email" name="email" formControlName="email" 
+          [ngClass]="{ 'is-invalid':  control.email.errors && formGroup.get('email').touched}"
+        />
+        <div *ngIf="control.email.errors" class="invalid-feedback">
+          <div *ngIf="control.email.errors.required">Se requiere el email</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="d-flex mt-3 justify-content-end">
+      <button (click)="onSubmit()" [disabled]="formGroup.invalid" class="btn btn-primary mr-3">Guardar</button>
+      <button type="reset" class="btn btn-danger">Cancelar</button>
+    </div>
+  </div>
+</form>

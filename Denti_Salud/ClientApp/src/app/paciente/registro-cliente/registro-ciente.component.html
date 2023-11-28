@@ -1,0 +1,106 @@
+<form class="form-group" [formGroup]="formGroup">
+  <div class="card p-3 mb-2">
+    <h2 class="card-title">Registrar paciente</h2>
+    <div class="row">
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="nombre" class="form-label">Nombres</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" formControlName="nombre" 
+        [ngClass]="{ 'is-invalid':  control.nombre.errors && formGroup.get('nombre').touched}"
+        />
+        <div *ngIf="control.nombre.errors" class="invalid-feedback">
+          <div *ngIf="control.nombre.errors.required">Se requiere el nombre</div>
+        </div>
+
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="apellido" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" id="apellido" name="apellido" formControlName="apellido"
+        [ngClass]="{ 'is-invalid':  control.apellido.errors && formGroup.get('apellido').touched}"
+        />
+        <div *ngIf="control.apellido.errors" class="invalid-feedback">
+          <div *ngIf="control.apellido.errors.required">Se requiere el apellido</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+        <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" formControlName="fechaNacimiento"
+        [ngClass]="{ 'is-invalid':  control.fechaNacimiento.errors && formGroup.get('fechaNacimiento').touched}"
+        />
+        <div *ngIf="control.fechaNacimiento.errors" class="invalid-feedback">
+          <div *ngIf="control.fechaNacimiento.errors.required">Se requiere la fecha de nacimiento</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <label for="tipoIdentificacion">Tipo de documento</label>
+        <select class="form-control" id="tipoIdentificacion" name="tipoIdentificacion" formControlName="tipoIdentificacion" 
+        [ngClass]="{ 'is-invalid':  control.tipoIdentificacion.errors && formGroup.get('tipoIdentificacion').touched}">
+          <option selected disabled>--Seleccione--</option>
+          <option value="TI">Tarjeta de identidad</option>
+          <option value="CC">Cedula de ciudadania</option>
+          <option value="RC">Registro civil</option>
+        </select>
+        <div *ngIf="control.tipoIdentificacion.errors" class="invalid-feedback">
+          <div *ngIf="control.tipoIdentificacion.errors.required">Se requiere el tipo de identificacion</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="identificacion" class="form-label">Numero de documento</label>
+        <input type="text" class="form-control" id="identificacion" name="identificacion" formControlName="identificacion"
+        [ngClass]="{ 'is-invalid':  control.identificacion.errors && formGroup.get('identificacion').touched}"
+        />
+        <div *ngIf="control.identificacion.errors" class="invalid-feedback">
+          <div *ngIf="control.identificacion.errors.required">Se requiere la identificacion</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="correo" class="form-label">Correo</label>
+        <input type="text" class="form-control" id="correo" name="correo" formControlName="correo"
+        [ngClass]="{ 'is-invalid':  control.correo.errors && formGroup.get('correo').touched}"
+        />
+        <div *ngIf="control.correo.errors" class="invalid-feedback">
+          <div *ngIf="control.correo.errors.required">Se requiere el correo</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <label for="genero">Genero</label>
+        <select class="form-control" id="genero" name="genero" formControlName="genero"
+        [ngClass]="{ 'is-invalid':  control.genero.errors && formGroup.get('genero').touched}"
+        >
+          <option selected disabled>--Seleccione--</option>
+          <option value="M">Masculino</option>
+          <option value="F">Femenino</option>
+        </select>
+        <div *ngIf="control.genero.errors" class="invalid-feedback">
+          <div *ngIf="control.genero.errors.required">Se requiere el genero</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="direccion" class="form-label">Direccion</label>
+        <input type="text" class="form-control" id="direccion" name="direccion" formControlName="direccion"
+        [ngClass]="{ 'is-invalid':  control.direccion.errors && formGroup.get('direccion').touched}"
+        />
+        <div *ngIf="control.direccion.errors" class="invalid-feedback">
+          <div *ngIf="control.direccion.errors.required">Se requiere la direccion</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="telefono" class="form-label">Celular</label>
+        <input type="text" class="form-control" id="telefono" name="telefono" formControlName="telefono"
+        [ngClass]="{ 'is-invalid':  control.telefono.errors && formGroup.get('telefono').touched}"
+        />
+        <div *ngIf="control.telefono.errors" class="invalid-feedback">
+          <div *ngIf="control.telefono.errors.required">Se requiere el telefono</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-primary mr-3" (click)="onSubmit()" [disabled]="formGroup.invalid">Guardar</button>
+      <button type="reset" class="btn btn-danger">Cancelar</button>
+    </div>
+  </div>
+</form>

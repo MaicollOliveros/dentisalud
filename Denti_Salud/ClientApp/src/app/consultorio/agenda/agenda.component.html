@@ -1,0 +1,18 @@
+<h2>Agenda de trabajo</h2>
+<img src="https://image.freepik.com/vector-gratis/medico-dentista-ninos-gabinete-estomatologia-clinica-dental-ortodoncista-espejo-juguete-lugar-trabajo-silla-moderna-equipada-motor-integrado-luz-quirurgica-ilustracion-dibujos-animados_107791-3876.jpg
+"
+     style="width: auto; display:block; margin:auto;" />
+<ul class="nav justify-content-end mb-5">
+  <li class="nav-item">
+    <button class="btn btn-primary mr-2" (click)="opcionCalendario()">
+      Calendario
+    </button>
+  </li>
+
+  <li class="nav-item">
+    <button class="btn btn-primary" (click)="opcionHoy()">Citas</button>
+  </li>
+</ul>
+<div *ngIf="opcion == 1">
+  <app-hoy></app-hoy>
+</div>

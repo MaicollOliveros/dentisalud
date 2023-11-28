@@ -1,0 +1,74 @@
+<h2 class="card-title">Informes de tratamiento</h2>
+<form class="form-group">
+    <div class="card p-3 mb-2">
+        
+        <div style="text-align: left;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel"
+                viewBox="0 0 16 16"
+                style="display:inline;margin-right: 40px;"
+                >
+                <path
+                    d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z" />
+            </svg>
+            
+            <label for="slcEstado" style="display:inline;margin-right: 10px;">Estados</label>
+            <select class="form-control" id="slcEstado" name="slcEstado" style="width:130px; display:inline;margin-right: 40px;">
+                <option selected disabled></option>
+                <option value="1">Todos</option>
+                <option value="2">Activo</option>
+                <option value="3">Terminado</option>
+            </select>
+            
+            <label for="tratamiento" class="form-label" style="display:inline;margin-right: 10px;">Tratamiento</label>
+            <input type="text" class="form-control" id="numDocumento" style="width: 250px; display:inline;margin-right: 20px;"/>
+
+            <button type="button" class="btn btn-light" style="display:inline;margin-right: 20px; display:inline; " >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </button>
+
+            
+        </div>
+
+        <div class="table-responsive">
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Identificacion</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Tratamiento</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>10023764182</td>
+                        <td>Andres Leon</td>
+                        <td>Ortodoncia</td>
+                        <td>Terminado</td>
+                        <td>700.000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>1002764883</td>
+                        <td>Carlos Antonio</td>
+                        <td>Implantes</td>
+                        <td>Activo</td>
+                        <td>1.100.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>
+
+<div class="d-flex justify-content-end">
+    <button href="#" class="btn btn-primary mr-3">Generar informe</button>
+</div>

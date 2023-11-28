@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/970580b1-112d-4e91-93c9-4a6be0d1994e/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/DentiSalud",
+    "appService.deploySubpath": "publish"
+}

@@ -1,0 +1,32 @@
+<form class="form-group" [formGroup]="formGroup">
+  <div class="card p-3 mb-2">
+    <h2 class="card-title">Registrar tratamiento</h2>
+    <div class="row">
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" formControlName="nombre"
+        [ngClass]="{ 'is-invalid':  control.nombre.errors && formGroup.get('nombre').touched}"
+        />
+        <div *ngIf="control.nombre.errors" class="invalid-feedback">
+          <div *ngIf="control.nombre.errors.required">Se requiere el nombre</div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 mb-3">
+        <label for="descripcion" class="form-label">Descripcion</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion" formControlName="descripcion"
+          [ngClass]="{ 'is-invalid':  control.descripcion.errors && formGroup.get('descripcion').touched}"
+        />
+        <div *ngIf="control.descripcion.errors" class="invalid-feedback">
+          <div *ngIf="control.descripcion.errors.required">Se requiere la Descripcion</div>
+        </div>
+      </div>
+      
+    </div>
+    
+    
+    <div class="d-flex mt-3 justify-content-end">
+      <button (click)="onSubmit()" [disabled]="formGroup.invalid" class="btn btn-primary mr-3">Guardar</button>
+      <button type="reset" class="btn btn-danger">Cancelar</button>
+    </div>
+  </div>
+</form>
